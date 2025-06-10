@@ -1,8 +1,10 @@
 package clinica.dao;
 
 import clinica.model.Usuario;
+import javax.swing.JOptionPane;           // Ajuste conforme o seu pacote
+import clinica.dao.UsuarioDAO;       // Ajuste conforme o seu pacote
+import clinica.login.SessaoUsuario; 
 import clinica.util.ConexaoUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,14 +13,14 @@ import java.sql.SQLException;
 public class UsuarioDAO {
 
     public boolean inserir(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (funcionario_id, login, senha, perfil) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO usuarios (id_funcionario, usuario, senha, permissao) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConexaoUtil.obterConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, usuario.getFuncionarioId());
             stmt.setString(2, usuario.getLogin());
             stmt.setString(3, usuario.getSenha());
-            stmt.setString(4, usuario.getPerfil());
+            stmt.setString(4, usuario.getPermissao());
 
             int linhasAfetadas = stmt.executeUpdate();
             return linhasAfetadas > 0;
@@ -30,14 +32,14 @@ public class UsuarioDAO {
     }
 
     public boolean alterar(Usuario usuario) {
-        String sql = "UPDATE usuarios SET funcionario_id = ?, login = ?, senha = ?, perfil = ? WHERE id = ?";
+        String sql = "UPDATE usuarios SET id_funcionario = ?, usuario = ?, senha = ?, permissao = ? WHERE id = ?";
         try (Connection conn = ConexaoUtil.obterConexao();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, usuario.getFuncionarioId());
             stmt.setString(2, usuario.getLogin());
             stmt.setString(3, usuario.getSenha());
-            stmt.setString(4, usuario.getPerfil());
+            stmt.setString(4, usuario.getPermissao());
             stmt.setInt(5, usuario.getId());
 
             int linhasAfetadas = stmt.executeUpdate();
@@ -75,10 +77,10 @@ public class UsuarioDAO {
             if (rs.next()) {
                 Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt("id"));
-                usuario.setFuncionarioId(rs.getInt("funcionario_id"));
-                usuario.setLogin(rs.getString("login"));
+                usuario.setFuncionarioId(rs.getInt("id_funcionario"));
+                usuario.setLogin(rs.getString("usuario"));
                 usuario.setSenha(rs.getString("senha"));
-                usuario.setPerfil(rs.getString("perfil"));
+                usuario.setPerfil(rs.getString("permissao "));
                 return usuario;
             }
         } catch (SQLException e) {

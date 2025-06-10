@@ -85,9 +85,9 @@ public class FuncionarioDAO {
             return false;
         }
     }
-    public Funcionario buscarPorCpf(String cpf) {
+   public Funcionario buscarPorCpf(String cpf) {
     Funcionario funcionario = null;
-    String sql = "SELECT * FROM funcionario WHERE cpf = ?";
+    String sql = "SELECT * FROM funcionarios WHERE cpf = ?";
 
     try (Connection conn = ConexaoUtil.obterConexao();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -98,15 +98,21 @@ public class FuncionarioDAO {
         if (rs.next()) {
             funcionario = new Funcionario();
             funcionario.setId(rs.getInt("id"));
-            funcionario.setNomeCompleto(rs.getString("nome"));
+            funcionario.setNomeCompleto(rs.getString("nome_completo"));
             funcionario.setRg(rs.getString("rg"));
             funcionario.setCpf(rs.getString("cpf"));
-            funcionario.setCidade(rs.getString("Cidade"));
+            funcionario.setRua(rs.getString("rua"));
+            funcionario.setNumero(rs.getString("numero"));
+            funcionario.setComplemento(rs.getString("complemento"));
+            funcionario.setBairro(rs.getString("bairro"));
+            funcionario.setCidade(rs.getString("cidade"));
+            funcionario.setEstado(rs.getString("estado"));
+            funcionario.setCep(rs.getString("cep"));
             funcionario.setTelefoneFixo(rs.getString("telefone_fixo"));
             funcionario.setTelefoneCelular(rs.getString("telefone_celular"));
             funcionario.setCtps(rs.getString("ctps"));
             funcionario.setPis(rs.getString("pis"));
-            // adicione os campos restantes conforme seu modelo
+            // adicione mais campos se precisar
         }
 
     } catch (SQLException e) {
@@ -115,9 +121,50 @@ public class FuncionarioDAO {
 
     return funcionario;
 }
+   
+  
+public Funcionario buscarPorId(int id) {
+    Funcionario func = null;
+    String sql = "SELECT * FROM funcionarios WHERE id = ?";
+
+    try (Connection con = ConexaoUtil.obterConexao(); // ou sua forma de obter conexão
+         PreparedStatement pst = con.prepareStatement(sql)) {
+        
+        pst.setInt(1, id);
+        ResultSet rs = pst.executeQuery();
+
+        if (rs.next()) {
+            func = new Funcionario();
+            func.setId(rs.getInt("id"));
+            func.setNomeCompleto(rs.getString("nome_completo"));
+            func.setRg(rs.getString("rg"));
+            func.setCpf(rs.getString("cpf"));
+            func.setRua(rs.getString("rua"));
+            func.setNumero(rs.getString("numero"));
+            func.setComplemento(rs.getString("complemento"));
+            func.setBairro(rs.getString("bairro"));
+            func.setCidade(rs.getString("cidade"));
+            func.setEstado(rs.getString("estado"));
+            func.setCep(rs.getString("cep"));
+            func.setTelefoneFixo(rs.getString("telefone_fixo"));
+            func.setTelefoneCelular(rs.getString("telefone_celular"));
+            func.setCtps(rs.getString("ctps"));
+            func.setPis(rs.getString("pis"));
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return func;
+}
+
+
+
+
 public List<Funcionario> buscarTodos() {
     List<Funcionario> lista = new ArrayList<>();
-    String sql = "SELECT * FROM funcionario";
+    String sql = "SELECT * FROM funcionarios";
 
     try (Connection conn = ConexaoUtil.obterConexao();
          PreparedStatement stmt = conn.prepareStatement(sql);
@@ -126,15 +173,21 @@ public List<Funcionario> buscarTodos() {
         while (rs.next()) {
             Funcionario funcionario = new Funcionario();
             funcionario.setId(rs.getInt("id"));
-            funcionario.setNomeCompleto(rs.getString("nome"));
+            funcionario.setNomeCompleto(rs.getString("nome_completo"));
             funcionario.setRg(rs.getString("rg"));
             funcionario.setCpf(rs.getString("cpf"));
-            funcionario.setCidade(rs.getString("Cidade"));
+            funcionario.setRua(rs.getString("rua"));
+            funcionario.setNumero(rs.getString("numero"));
+            funcionario.setComplemento(rs.getString("complemento"));
+            funcionario.setBairro(rs.getString("bairro"));
+            funcionario.setCidade(rs.getString("cidade"));
+            funcionario.setEstado(rs.getString("estado"));
+            funcionario.setCep(rs.getString("cep"));
             funcionario.setTelefoneFixo(rs.getString("telefone_fixo"));
             funcionario.setTelefoneCelular(rs.getString("telefone_celular"));
             funcionario.setCtps(rs.getString("ctps"));
             funcionario.setPis(rs.getString("pis"));
-            // adicione os campos restantes conforme seu modelo
+            // adicione os campos restantes
             lista.add(funcionario);
         }
 
@@ -143,6 +196,6 @@ public List<Funcionario> buscarTodos() {
     }
 
     return lista;
+ }
 }
 
-}
