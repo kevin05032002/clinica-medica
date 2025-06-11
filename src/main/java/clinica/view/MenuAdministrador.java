@@ -127,6 +127,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         Usuario.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Usuario.setText("Cadastrar Usuario");
         Usuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioActionPerformed(evt);
+            }
+        });
 
         Medico.setBackground(new java.awt.Color(103, 229, 186));
         Medico.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -322,6 +327,12 @@ public class MenuAdministrador extends javax.swing.JFrame {
    EditarPerfil ep = new EditarPerfil(usuario);
     ep.setVisible(true);
     }//GEN-LAST:event_menuPerfilActionPerformed
+
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
+        CadastroUsuario TelaCadastroUsuario = new CadastroUsuario();
+        TelaCadastroUsuario.setVisible(true);
+        TelaCadastroUsuario.setLocationRelativeTo(null);
+    }//GEN-LAST:event_UsuarioActionPerformed
 
      public static void main(String args[]) {
         Usuario usuarioLogado = new Usuario(); // ou receba de outro lugar, como da tela de login

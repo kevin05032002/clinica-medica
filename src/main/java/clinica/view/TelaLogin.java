@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import clinica.dao.UsuarioDAO;
 import clinica.model.Usuario;
 
+
 public class TelaLogin extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -16,7 +17,6 @@ public class TelaLogin extends JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,23 +57,15 @@ public class TelaLogin extends JFrame {
         jPanel1.setBackground(new java.awt.Color(103, 229, 186));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Pictures\\download.jpeg")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel3)
-                .addContainerGap(410, Short.MAX_VALUE))
+            .addGap(0, 710, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel3)
-                .addContainerGap(68, Short.MAX_VALUE))
+            .addGap(0, 346, Short.MAX_VALUE)
         );
 
         jButton2.setBackground(new java.awt.Color(103, 229, 186));
@@ -147,7 +139,7 @@ public class TelaLogin extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
  public TelaLogin() {
         initComponents();  // ESSA LINHA É FUNDAMENTAL!
-    }
+}
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
@@ -195,7 +187,6 @@ if (u != null) {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField txtSenha;

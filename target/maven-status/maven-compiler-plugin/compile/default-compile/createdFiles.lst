@@ -22,6 +22,7 @@ clinica\view\TelaFuncionario.class
 clinica\view\MenuAdministrador$10.class
 clinica\dao\EspecialidadeDAO.class
 clinica\view\TelaLogin$4.class
+clinica\view\CadastroUsuario$2.class
 clinica\view\TelaLogin$1.class
 clinica\view\TelaFuncionario$2.class
 clinica\view\MenuAdministrador$9.class
@@ -42,6 +43,7 @@ clinica\view\CadastroEspecialidade.class
 clinica\view\MenuAdministrador$5.class
 clinica\model\Usuario.class
 clinica\view\CadastroEspecialidade$4.class
+clinica\view\MenuAdministrador$11.class
 clinica\model\Funcionario.class
 clinica\view\ListarEspecialidade$6.class
 clinica\view\TelaLogin$2.class
