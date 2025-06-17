@@ -49,6 +49,20 @@ public class EspecialidadeDAO {
 
         return especialidades;
     }
+    public int contarEspecialidades() {
+    int total = 0;
+    String sql = "SELECT COUNT(*) FROM especialidades";
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        if (rs.next()) {
+            total = rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return total;
+}
 
     public boolean excluir(int id) {
         String sql = "DELETE FROM especialidades WHERE id = ?";
@@ -80,28 +94,22 @@ public class EspecialidadeDAO {
             return false;
         }
     }
-  public List<Especialidade> buscarPorDescricao(String descricao) {
-    List<Especialidade> lista = new ArrayList<>();
-    String sql = "SELECT * FROM especialidades WHERE descricao LIKE ?";
-
+  public Especialidade buscarPorDescricao(String descricao) {
+    Especialidade especialidade = null;
+    String sql = "SELECT * FROM especialidades WHERE descricao = ?";
     try (Connection conn = ConexaoUtil.obterConexao();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-        stmt.setString(1, "%" + descricao + "%");
+        stmt.setString(1, descricao);
         ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            Especialidade e = new Especialidade();
-            e.setId(rs.getInt("id"));
-            e.setDescricao(rs.getString("descricao"));
-            lista.add(e);
+        if (rs.next()) {
+            especialidade = new Especialidade();
+            especialidade.setId(rs.getInt("id"));
+            especialidade.setDescricao(rs.getString("descricao"));
         }
-
-    } catch (SQLException ex) {
-        ex.printStackTrace();
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
-
-    return lista;
+    return especialidade;
 }
   public Especialidade buscarPorId(int id) {
     Especialidade especialidade = null;

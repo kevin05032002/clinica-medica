@@ -52,8 +52,10 @@ public class ListarEspecialidade extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        btnBuscar.setBackground(new java.awt.Color(103, 229, 186));
+        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +63,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnLimpar.setBackground(new java.awt.Color(103, 229, 186));
+        btnLimpar.setBackground(new java.awt.Color(0, 0, 0));
+        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +74,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
 
         jLabel1.setText("Especialidade");
 
-        btnListarTodos.setBackground(new java.awt.Color(103, 229, 186));
+        btnListarTodos.setBackground(new java.awt.Color(0, 0, 0));
+        btnListarTodos.setForeground(new java.awt.Color(255, 255, 255));
         btnListarTodos.setText("Listar Todas");
         btnListarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +83,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnExcluir.setBackground(new java.awt.Color(103, 229, 186));
+        btnExcluir.setBackground(new java.awt.Color(0, 0, 0));
+        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +92,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnSair.setBackground(new java.awt.Color(103, 229, 186));
+        btnSair.setBackground(new java.awt.Color(0, 0, 0));
+        btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +101,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        tabelaEspecialidades.setBackground(new java.awt.Color(103, 229, 186));
+        tabelaEspecialidades.setBackground(new java.awt.Color(0, 0, 0));
+        tabelaEspecialidades.setForeground(new java.awt.Color(255, 255, 255));
         tabelaEspecialidades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -107,6 +114,8 @@ public class ListarEspecialidade extends javax.swing.JFrame {
                 "id", "Especialidade"
             }
         ));
+        tabelaEspecialidades.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tabelaEspecialidades.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tabelaEspecialidades);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,7 +135,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                         .addComponent(btnListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -134,7 +143,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
                             .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                             .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -156,7 +165,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -196,7 +205,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
     }
 
     EspecialidadeDAO dao = new EspecialidadeDAO();
-    List<Especialidade> lista = dao.buscarPorDescricao(descricao);  // Recebe lista
+    List<Especialidade> lista = (List<Especialidade>) dao.buscarPorDescricao(descricao);  // Recebe lista
 
     if (lista.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Nenhuma especialidade encontrada.");
@@ -234,10 +243,9 @@ public class ListarEspecialidade extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-         // Supondo que você queira voltar para o menu administrador
-        MenuAdministrador menu = new MenuAdministrador();
-        menu.setVisible(true);
-        this.dispose();
+        
+        
+        dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed

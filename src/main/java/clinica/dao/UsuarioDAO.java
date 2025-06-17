@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioDAO {
 
@@ -80,7 +82,7 @@ public class UsuarioDAO {
                 usuario.setFuncionarioId(rs.getInt("id_funcionario"));
                 usuario.setLogin(rs.getString("usuario"));
                 usuario.setSenha(rs.getString("senha"));
-                usuario.setPerfil(rs.getString("permissao "));
+                usuario.setPerfil(rs.getString("permissao"));
                 return usuario;
             }
         } catch (SQLException e) {
@@ -117,5 +119,65 @@ public class UsuarioDAO {
 
     return null;
 }
+ public List<Usuario> buscarTodos() {
+    List<Usuario> lista = new ArrayList<>();
+    String sql = "SELECT * FROM usuarios";
 
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            Usuario u = new Usuario();
+            u.setId(rs.getInt("id"));
+            u.setLogin(rs.getString("usuario"));
+            u.setPermissao(rs.getString("permissao")); // ← atualizado aqui
+            lista.add(u);
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return lista;
+}
+
+  public List<Usuario> buscarPorLogin(String login) {
+    List<Usuario> lista = new ArrayList<>();
+    String sql = "SELECT * FROM usuarios WHERE usuario LIKE ?";
+
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, "%" + login + "%");
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Usuario u = new Usuario();
+            u.setId(rs.getInt("id"));
+            u.setLogin(rs.getString("usuario"));
+            u.setPermissao(rs.getString("permissao")); // ← atualizado aqui
+            lista.add(u);
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return lista;
+}
+  public int contarUsuarios() {
+    int total = 0;
+    String sql = "SELECT COUNT(*) FROM usuarios";
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        if (rs.next()) {
+            total = rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return total;
+}
 }

@@ -197,5 +197,19 @@ public List<Funcionario> buscarTodos() {
 
     return lista;
  }
+public int contarFuncionarios() {
+    int total = 0;
+    String sql = "SELECT COUNT(*) FROM funcionarios";
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        if (rs.next()) {
+            total = rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return total;
+}
 }
 

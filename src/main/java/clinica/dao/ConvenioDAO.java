@@ -103,5 +103,34 @@ public class ConvenioDAO {
 
         return lista;
     }
+    
+    public List<Convenio> buscarPorNomeEmpresa(String nomeEmpresa) {
+    List<Convenio> lista = new ArrayList<>();
+
+    String sql = "SELECT * FROM convenios WHERE nome_empresa LIKE ?";
+
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, "%" + nomeEmpresa + "%");
+
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Convenio convenio = new Convenio();
+            convenio.setId(rs.getInt("id"));
+            convenio.setNomeEmpresa(rs.getString("nome_empresa"));
+            convenio.setCnpj(rs.getString("cnpj"));
+            convenio.setTelefone(rs.getString("telefone"));
+
+            lista.add(convenio);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return lista;
+}
 }
 
