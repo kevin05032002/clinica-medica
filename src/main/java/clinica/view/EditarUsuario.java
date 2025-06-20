@@ -77,7 +77,7 @@ public class EditarUsuario extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        comboPermissao = new javax.swing.JComboBox<>();
+        comboPermissao = new javax.swing.JComboBox();
         txtConfirmaSenha = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
 
@@ -114,7 +114,7 @@ public class EditarUsuario extends javax.swing.JFrame {
 
         jLabel4.setText("Função");
 
-        comboPermissao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "MEDICO", "ATENDENTE", " " }));
+        comboPermissao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ADMIN", "MEDICO", "ATENDENTE", " " }));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -244,7 +244,7 @@ public class EditarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JComboBox<String> comboPermissao;
+    private javax.swing.JComboBox comboPermissao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

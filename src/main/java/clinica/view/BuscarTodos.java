@@ -321,7 +321,7 @@ telaEditar.setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-      int linhaSelecionada = tabelaFuncionarios.getSelectedRow();
+     int linhaSelecionada = tabelaFuncionarios.getSelectedRow();
 
     if (linhaSelecionada != -1) {
         int confirmacao = JOptionPane.showConfirmDialog(this,
@@ -332,16 +332,20 @@ telaEditar.setVisible(true);
         if (confirmacao == JOptionPane.YES_OPTION) {
             int idFuncionario = (int) tabelaFuncionarios.getValueAt(linhaSelecionada, 0);
 
-            FuncionarioDAO dao = new FuncionarioDAO();
-            boolean sucesso = dao.deletar(idFuncionario);
+            try {
+                FuncionarioDAO dao = new FuncionarioDAO();
+                dao.deletar(idFuncionario); // método não precisa retornar boolean
 
-            if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Funcionário excluído com sucesso!");
-                // Atualiza a tabela após a exclusão
+
+                // Recarrega a tabela atualizada
                 List<Funcionario> listaAtualizada = dao.buscarTodos();
                 carregarTabela(listaAtualizada);
-            } else {
-                JOptionPane.showMessageDialog(this, "Erro ao excluir funcionário.");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,
+                    "Erro ao excluir funcionário:\n" + e.getMessage(),
+                    "Erro", JOptionPane.ERROR_MESSAGE);
             }
         }
     } else {

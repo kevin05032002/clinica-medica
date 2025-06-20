@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class FuncionarioDAO {
 
@@ -71,20 +72,50 @@ public class FuncionarioDAO {
         }
     }
 
-    public boolean deletar(int id) {
-        String sql = "DELETE FROM funcionarios WHERE id = ?";
-        try (Connection conn = ConexaoUtil.obterConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+   public void deletar(int id) {
+    Connection conn = null;
+    PreparedStatement stmtUsuario = null;
+    PreparedStatement stmtFuncionario = null;
 
-            stmt.setInt(1, id);
-            int linhasAfetadas = stmt.executeUpdate();
-            return linhasAfetadas > 0;
+    try {
+        conn = ConexaoUtil.obterConexao();
+        conn.setAutoCommit(false); // Inicia transação
 
+        // 1. Excluir usuários vinculados ao funcionário
+        String sqlUsuario = "DELETE FROM usuarios WHERE id_funcionario = ?";
+        stmtUsuario = conn.prepareStatement(sqlUsuario);
+        stmtUsuario.setInt(1, id);
+        stmtUsuario.executeUpdate();
+
+        // 2. Excluir funcionário
+        String sqlFuncionario = "DELETE FROM funcionarios WHERE id = ?";
+        stmtFuncionario = conn.prepareStatement(sqlFuncionario);
+        stmtFuncionario.setInt(1, id);
+        stmtFuncionario.executeUpdate();
+
+        conn.commit(); // Confirma as exclusões
+        JOptionPane.showMessageDialog(null, "Funcionário deletado com sucesso!");
+
+    } catch (SQLException e) {
+        try {
+            if (conn != null) conn.rollback(); // Desfaz se der erro
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Erro ao deletar funcionário: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+
+    } finally {
+        try {
+            if (stmtUsuario != null) stmtUsuario.close();
+            if (stmtFuncionario != null) stmtFuncionario.close();
+            if (conn != null) conn.setAutoCommit(true); conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
+}
+
    public Funcionario buscarPorCpf(String cpf) {
     Funcionario funcionario = null;
     String sql = "SELECT * FROM funcionarios WHERE cpf = ?";

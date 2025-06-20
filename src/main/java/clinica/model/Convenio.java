@@ -54,5 +54,6 @@ public class Convenio {
     public String toString() {
         return nomeEmpresa;
     }
+    
 }
     

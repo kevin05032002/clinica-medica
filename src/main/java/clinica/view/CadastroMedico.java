@@ -103,6 +103,11 @@ for (Especialidade esp : listaEspecialidades) {
 
         comboEspecialidade.setBackground(new java.awt.Color(255, 255, 254));
         comboEspecialidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboEspecialidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboEspecialidadeActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setBackground(new java.awt.Color(0, 0, 0));
         btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
@@ -250,6 +255,10 @@ for (Especialidade esp : listaEspecialidades) {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void comboEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEspecialidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboEspecialidadeActionPerformed
 
     /**
      * @param args the command line arguments

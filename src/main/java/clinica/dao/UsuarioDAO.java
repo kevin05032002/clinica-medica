@@ -180,4 +180,20 @@ public class UsuarioDAO {
     }
     return total;
 }
+  public void deletarPorFuncionarioId(int idFuncionario) {
+    String sql = "DELETE FROM usuarios WHERE id_funcionario = ?";
+
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, idFuncionario);
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null,
+            "Erro ao deletar usuários vinculados ao funcionário: " + e.getMessage(),
+            "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
 }

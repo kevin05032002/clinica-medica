@@ -11,6 +11,7 @@ clinica\view\BuscarTodos$1.class
 clinica\view\EditarPerfil$1.class
 clinica\model\Paciente.class
 clinica\view\CadastroMedico$1.class
+clinica\medico\AgendarConsultas.class
 clinica\view\BuscarTodos$4.class
 clinica\view\ListarConvenio$1.class
 clinica\view\ListarUsuario$4.class
@@ -20,6 +21,7 @@ clinica\view\EditarFuncionario$2.class
 clinica\view\EditarUsuario$1.class
 clinica\view\MenuAdministrador$2.class
 clinica\view\BuscarTodos$6.class
+clinica\medico\AgendarConsultas$1.class
 clinica\view\ListarUsuario$TesteListarUsuarios.class
 clinica\dao\PacienteDAO.class
 clinica\view\TelaFuncionario.class
@@ -58,6 +60,7 @@ clinica\view\ListarConvenio$5.class
 clinica\main\mainClass.class
 clinica\view\CadastrarConvenio.class
 clinica\view\EditarFuncionario$1.class
+clinica\medico\AgendarConsultas$2.class
 clinica\view\CadastrarConvenio$1.class
 clinica\view\MenuAdministrador$12.class
 clinica\view\CadastroMedico.class
@@ -76,6 +79,7 @@ clinica\view\ListarUsuario$2.class
 clinica\model\Medico.class
 clinica\view\ListarConvenio$3.class
 clinica\view\TelaLogin$5.class
+clinica\medico\AgendarConsultas$3.class
 clinica\model\Consulta.class
 clinica\model\Convenio.class
 clinica\view\EditarPerfil$2.class
@@ -86,6 +90,7 @@ clinica\view\EditarMedico$2.class
 clinica\view\MenuAdministrador$17.class
 clinica\view\CadastroMedico$2.class
 clinica\view\CadastroUsuario$2.class
+clinica\view\CadastroMedico$5.class
 clinica\view\MenuAdministrador$9.class
 clinica\model\Prontuario.class
 clinica\view\TelaLogin$3.class

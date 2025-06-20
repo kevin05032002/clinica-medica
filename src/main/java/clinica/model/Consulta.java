@@ -1,46 +1,44 @@
 package clinica.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Consulta {
     private int id;
-    private int idPaciente;
-    private int idMedico;
-    private String dataConsulta;
-    private String horario;
-    private String tipo;          // no lugar de tipoConsulta
-    private String observacoes;   // no lugar de status, agora tem o significado de observações mesmo
+    private Paciente paciente;
+    private Medico medico;
+    private LocalDate data;
+    private LocalTime hora;
+    private String tipo;
+    private Convenio convenio;
+    private String observacoes;
 
-    public Consulta() {}
+    public Paciente getPaciente() { return paciente; }
+    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
 
-    public Consulta(int id, int idPaciente, int idMedico, String dataConsulta, String horario, String tipo, String observacoes) {
-        this.id = id;
-        this.idPaciente = idPaciente;
-        this.idMedico = idMedico;
-        this.dataConsulta = dataConsulta;
-        this.horario = horario;
-        this.tipo = tipo;
-        this.observacoes = observacoes;
-    }
+    public Medico getMedico() { return medico; }
+    public void setMedico(Medico medico) { this.medico = medico; }
 
-    // Getters e setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public LocalDate getData() { return data; }
+    public void setData(LocalDate data) { this.data = data; }
 
-    public int getIdPaciente() { return idPaciente; }
-    public void setIdPaciente(int idPaciente) { this.idPaciente = idPaciente; }
-
-    public int getIdMedico() { return idMedico; }
-    public void setIdMedico(int idMedico) { this.idMedico = idMedico; }
-
-    public String getDataConsulta() { return dataConsulta; }
-    public void setDataConsulta(String dataConsulta) { this.dataConsulta = dataConsulta; }
-
-    public String getHorario() { return horario; }
-    public void setHorario(String horario) { this.horario = horario; }
+    public LocalTime getHora() { return hora; }
+    public void setHora(LocalTime hora) { this.hora = hora; }
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
 
+    public Convenio getConvenio() { return convenio; }
+    public void setConvenio(Convenio convenio) { this.convenio = convenio; }
+
     public String getObservacoes() { return observacoes; }
     public void setObservacoes(String observacoes) { this.observacoes = observacoes; }
-}
 
+    public int getId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setId(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}

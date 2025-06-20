@@ -88,14 +88,15 @@ private FuncionarioDAO funcionarioDAO;
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         lblBoasVindas = new javax.swing.JLabel();
         lblDataHora = new javax.swing.JLabel();
         panelFuncionarios = new javax.swing.JPanel();
-        lblTotalFuncionarios = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        lblTotalFuncionarios = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblTotalUsuarios = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -110,7 +111,6 @@ private FuncionarioDAO funcionarioDAO;
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuFuncionario = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -156,113 +156,102 @@ private FuncionarioDAO funcionarioDAO;
         jPanel1.add(lblDataHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 740, 1230, 30));
 
         panelFuncionarios.setBackground(new java.awt.Color(255, 255, 255));
-        panelFuncionarios.setLayout(null);
-
-        lblTotalFuncionarios.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
-        lblTotalFuncionarios.setText("Funcionarios");
-        panelFuncionarios.add(lblTotalFuncionarios);
-        lblTotalFuncionarios.setBounds(331, 36, 120, 27);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jLabel1.setText("Total Funcionarios :");
         panelFuncionarios.add(jLabel1);
-        jLabel1.setBounds(145, 36, 186, 27);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\Usuario.png")); // NOI18N
         panelFuncionarios.add(jLabel4);
-        jLabel4.setBounds(451, 25, 50, 50);
+
+        lblTotalFuncionarios.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
+        lblTotalFuncionarios.setText("Funcionarios");
+        panelFuncionarios.add(lblTotalFuncionarios);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jLabel3.setText("Total Usuario:");
         panelFuncionarios.add(jLabel3);
-        jLabel3.setBounds(501, 36, 133, 27);
 
-        lblTotalUsuarios.setFont(new java.awt.Font("Segoe UI Emoji", 3, 24)); // NOI18N
+        lblTotalUsuarios.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         lblTotalUsuarios.setText("Usuarios");
         panelFuncionarios.add(lblTotalUsuarios);
-        lblTotalUsuarios.setBounds(630, 40, 96, 27);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\estetoscópio.png")); // NOI18N
         panelFuncionarios.add(jLabel5);
-        jLabel5.setBounds(731, 25, 50, 50);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jLabel6.setText("Total Especialidade:");
         panelFuncionarios.add(jLabel6);
-        jLabel6.setBounds(781, 36, 189, 27);
 
-        lblTotalEspecialidades.setFont(new java.awt.Font("Segoe UI Emoji", 3, 24)); // NOI18N
+        lblTotalEspecialidades.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         lblTotalEspecialidades.setText("Especialidade");
         panelFuncionarios.add(lblTotalEspecialidades);
-        lblTotalEspecialidades.setBounds(970, 40, 153, 27);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\Medico.png")); // NOI18N
         panelFuncionarios.add(jLabel8);
-        jLabel8.setBounds(1123, 25, 50, 50);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jLabel7.setText("Total Medicos:");
         panelFuncionarios.add(jLabel7);
-        jLabel7.setBounds(1173, 36, 136, 27);
 
-        lblTotalMedicos.setFont(new java.awt.Font("Segoe UI Emoji", 3, 24)); // NOI18N
+        lblTotalMedicos.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         lblTotalMedicos.setText("Medicos");
         panelFuncionarios.add(lblTotalMedicos);
-        lblTotalMedicos.setBounds(1310, 40, 95, 27);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\Funcionario.png")); // NOI18N
         panelFuncionarios.add(jLabel2);
-        jLabel2.setBounds(95, 25, 50, 50);
 
-        jPanel1.add(panelFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1510, 90));
+        jPanel1.add(panelFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1510, 80));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1500, 800));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jButton2.setBackground(new java.awt.Color(255, 255, 254));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\imagens\\Funcionario.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Funcionario.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(40, 35, 40, 35);
+        jPanel2.add(jButton2, gridBagConstraints);
 
         jButton3.setBackground(new java.awt.Color(255, 255, 254));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\imagens\\Paciente.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Paciente.png"))); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
-        jPanel2.add(jButton3);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(35, 30, 35, 30);
+        jPanel2.add(jButton3, gridBagConstraints);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 254));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\imagens\\Agenda.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agenda.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(35, 30, 35, 30);
+        jPanel2.add(jButton1, gridBagConstraints);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 254));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Desktop\\imagens\\Siatema.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Siatema.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.weighty = 0.4;
+        gridBagConstraints.insets = new java.awt.Insets(35, 30, 35, 30);
+        jPanel2.add(jButton4, gridBagConstraints);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 1500, 90));
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuário\\Pictures\\Vaidacerto.jpg")); // NOI18N
-        jLabel9.setPreferredSize(new java.awt.Dimension(1, 1390));
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 780));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1500, 210));
 
         jMenuBar2.setBackground(new java.awt.Color(255, 255, 254));
         jMenuBar2.setBorder(null);
@@ -421,9 +410,7 @@ private FuncionarioDAO funcionarioDAO;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,7 +527,6 @@ tela.setVisible(true);
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
