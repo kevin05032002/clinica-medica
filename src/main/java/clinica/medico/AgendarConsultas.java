@@ -1,5 +1,7 @@
 package clinica.medico;
 
+//feito pelo jao
+
 import clinica.dao.ConsultaDAO;
 import clinica.dao.MedicoDAO;
 import clinica.dao.PacienteDAO;
