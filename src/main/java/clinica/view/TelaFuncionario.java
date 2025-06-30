@@ -79,11 +79,10 @@ private void limparCampos() {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setPreferredSize(new java.awt.Dimension(950, 650));
 
-        bntSair.setBackground(new java.awt.Color(0, 0, 0));
-        bntSair.setForeground(new java.awt.Color(255, 255, 255));
+        bntSair.setBackground(new java.awt.Color(255, 255, 254));
         bntSair.setText("Sair");
         bntSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,8 +90,7 @@ private void limparCampos() {
             }
         });
 
-        Limpar.setBackground(new java.awt.Color(0, 0, 0));
-        Limpar.setForeground(new java.awt.Color(255, 255, 255));
+        Limpar.setBackground(new java.awt.Color(255, 255, 254));
         Limpar.setText("Limpar");
         Limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +98,7 @@ private void limparCampos() {
             }
         });
 
-        Salvar.setBackground(new java.awt.Color(0, 0, 0));
-        Salvar.setForeground(new java.awt.Color(255, 255, 255));
+        Salvar.setBackground(new java.awt.Color(255, 255, 254));
         Salvar.setText("Salvar");
         Salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +134,7 @@ private void limparCampos() {
 
         jLabel4.setText("Nome completo");
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(java.awt.SystemColor.textHighlight);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -1,3 +1,8 @@
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\atendente\view\AgendarConsulta.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\atendente\view\CadastrarPaciente.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\atendente\view\ListarConsultas.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\atendente\view\ListarPaciente.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\atendente\view\MenuAtendente.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\ConsultaDAO.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\ConvenioDAO.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\EspecialidadeDAO.java
@@ -6,9 +11,15 @@ C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinic
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\PacienteDAO.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\ProntuarioDAO.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\dao\UsuarioDAO.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\login\SessaoMedico.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\login\SessaoUsuario.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\main\mainClass.java
-C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\AgendarConsultas.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\AtenderConsulta.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\BuscarPorPaciente.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\HistoricoConsultas.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\ListarConsultasAgendadas.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\MenuMedico.java
+C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\medico\view\MeusProntuario.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\model\Consulta.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\model\Convenio.java
 C:\Users\Usuário\Documents\NetBeansProjects\clinica-medica\src\main\java\clinica\model\Especialidade.java

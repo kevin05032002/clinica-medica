@@ -6,6 +6,7 @@ import clinica.util.ConexaoUtil;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class PacienteDAO {
 
@@ -149,4 +150,44 @@ public class PacienteDAO {
 
         return p;
     }
+    
+    public List<Paciente> buscarPorNome(String nome) {
+    List<Paciente> lista = new ArrayList<>();
+
+    String sql = "SELECT * FROM pacientes WHERE nome_completo LIKE ? ORDER BY nome_completo";
+
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, "%" + nome + "%");
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Paciente paciente = new Paciente();
+            paciente.setId(rs.getInt("id"));
+            paciente.setNomeCompleto(rs.getString("nome_completo"));
+            paciente.setRg(rs.getString("rg"));
+            paciente.setCpf(rs.getString("cpf"));
+            paciente.setDataNascimento(rs.getString("data_nascimento"));
+            paciente.setTelefone(rs.getString("telefone"));
+            paciente.setEmail(rs.getString("email"));
+            paciente.setRua(rs.getString("rua"));
+            paciente.setNumero(rs.getString("numero"));
+            paciente.setComplemento(rs.getString("complemento"));
+            paciente.setBairro(rs.getString("bairro"));
+            paciente.setCidade(rs.getString("cidade"));
+            paciente.setEstado(rs.getString("estado"));
+            paciente.setCep(rs.getString("cep"));
+
+            lista.add(paciente);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Erro ao buscar pacientes por nome: " + e.getMessage());
+    }
+
+    return lista;
+}
+    
 }

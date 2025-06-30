@@ -25,20 +25,8 @@ public class MedicoDAO {
             throw new RuntimeException("Erro ao inserir médico: " + ex.getMessage(), ex);
         }
     }
-public int contarMedicos() {
-    int total = 0;
-    String sql = "SELECT COUNT(*) FROM medicos WHERE ativo = 1";  // Exemplo com filtro de ativo
-    try (Connection con = ConexaoUtil.obterConexao();
-         PreparedStatement ps = con.prepareStatement(sql);
-         ResultSet rs = ps.executeQuery()) {
-        if (rs.next()) {
-            total = rs.getInt(1);
-        }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-    return total;
-}
+
+
     public void atualizar(Medico medico) {
         String sql = "UPDATE medicos SET nome = ?, crm = ?, id_especialidade = ? WHERE id = ?";
 
@@ -146,5 +134,39 @@ public int contarMedicos() {
     }
 
     return lista;
+}
+    public Medico buscarPorUsuarioId(int usuarioId) {
+    String sql = "SELECT m.id, m.nome, m.crm, e.id AS esp_id, e.descricao " +
+                 "FROM medicos m " +
+                 "JOIN especialidades e ON m.id_especialidade = e.id " +
+                 "WHERE m.usuario_id = ?";
+
+    try (Connection conn = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, usuarioId);
+
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                Especialidade especialidade = new Especialidade(
+                    rs.getInt("esp_id"),
+                    rs.getString("descricao")
+                );
+
+                Medico medico = new Medico();
+                medico.setId(rs.getInt("id"));
+                medico.setNome(rs.getString("nome"));
+                medico.setCrm(rs.getString("crm"));
+                medico.setEspecialidade(especialidade);
+
+                return medico;
+            }
+        }
+
+    } catch (SQLException ex) {
+        throw new RuntimeException("Erro ao buscar médico por usuário_id: " + ex.getMessage(), ex);
+    }
+
+    return null;
 }
 }

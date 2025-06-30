@@ -1,6 +1,7 @@
 
 
 package clinica.view;
+import clinica.dao.ConvenioDAO;
 import clinica.dao.EspecialidadeDAO;
 import clinica.dao.FuncionarioDAO;
 import clinica.dao.MedicoDAO;
@@ -26,7 +27,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
 private FuncionarioDAO funcionarioDAO;
     private UsuarioDAO usuarioDAO;
     private EspecialidadeDAO especialidadeDAO;
-    private MedicoDAO medicoDAO;
+    private ConvenioDAO convenioDAO;
     
     public MenuAdministrador(Usuario usuario) {
         initComponents();
@@ -39,7 +40,7 @@ private FuncionarioDAO funcionarioDAO;
       funcionarioDAO = new FuncionarioDAO();
         usuarioDAO = new UsuarioDAO();
         especialidadeDAO = new EspecialidadeDAO();
-        medicoDAO = new MedicoDAO();
+        convenioDAO = new ConvenioDAO();
 
         // Carrega os contadores iniciais ao abrir a tela
         atualizarContadores();
@@ -59,7 +60,7 @@ private FuncionarioDAO funcionarioDAO;
         funcionarioDAO = new FuncionarioDAO();
         usuarioDAO = new UsuarioDAO();
         especialidadeDAO = new EspecialidadeDAO();
-        medicoDAO = new MedicoDAO();
+        convenioDAO = new ConvenioDAO();
         atualizarContadores(); // Carrega contadores mesmo sem usuário logado
     }
 
@@ -73,7 +74,7 @@ private FuncionarioDAO funcionarioDAO;
             lblTotalFuncionarios.setText(String.valueOf(funcionarioDAO.contarFuncionarios()));
             lblTotalUsuarios.setText(String.valueOf(usuarioDAO.contarUsuarios()));
             lblTotalEspecialidades.setText(String.valueOf(especialidadeDAO.contarEspecialidades()));
-            lblTotalMedicos.setText(String.valueOf(medicoDAO.contarMedicos()));
+            lblTotalConvenio.setText(String.valueOf(convenioDAO.contarConvenio()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro ao carregar contadores: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace(); // Para depuração
@@ -104,7 +105,7 @@ private FuncionarioDAO funcionarioDAO;
         lblTotalEspecialidades = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lblTotalMedicos = new javax.swing.JLabel();
+        lblTotalConvenio = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -127,13 +128,10 @@ private FuncionarioDAO funcionarioDAO;
         jMenu1 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         menuPerfil = new javax.swing.JMenuItem();
         btnSair = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -185,12 +183,12 @@ private FuncionarioDAO funcionarioDAO;
         panelFuncionarios.add(jLabel8);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
-        jLabel7.setText("Total Medicos:");
+        jLabel7.setText("Total Convenio:");
         panelFuncionarios.add(jLabel7);
 
-        lblTotalMedicos.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
-        lblTotalMedicos.setText("Medicos");
-        panelFuncionarios.add(lblTotalMedicos);
+        lblTotalConvenio.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
+        lblTotalConvenio.setText("Convenio");
+        panelFuncionarios.add(lblTotalConvenio);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelFuncionarios.add(jLabel2);
@@ -219,6 +217,11 @@ private FuncionarioDAO funcionarioDAO;
         jButton3.setBackground(new java.awt.Color(255, 255, 254));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Paciente.png"))); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -356,20 +359,6 @@ private FuncionarioDAO funcionarioDAO;
 
         jMenuBar2.add(jMenu1);
 
-        jMenu2.setText("Agendamentos ");
-
-        jMenuItem11.setText("Listar Agendamentos");
-        jMenu2.add(jMenuItem11);
-
-        jMenuBar2.add(jMenu2);
-
-        jMenu5.setText("Paciente");
-
-        jMenuItem12.setText("Consultar Paciente");
-        jMenu5.add(jMenuItem12);
-
-        jMenuBar2.add(jMenu5);
-
         jMenu4.setBorder(null);
         jMenu4.setText("Perfil");
         jMenu4.addMenuListener(new javax.swing.event.MenuListener() {
@@ -393,6 +382,14 @@ private FuncionarioDAO funcionarioDAO;
         jMenuBar2.add(jMenu4);
 
         btnSair.setText("Sistema");
+
+        jMenuItem11.setText("Logout");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        btnSair.add(jMenuItem11);
 
         menuSair.setText("Sair");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
@@ -468,7 +465,8 @@ private FuncionarioDAO funcionarioDAO;
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+ ListarConvenio tela = new ListarConvenio();
+tela.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -502,6 +500,24 @@ tela.setVisible(true);         // TODO add your handling code here:
 tela.setVisible(true); 
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+CadastroMedico tela = new CadastroMedico();
+tela.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+  int confirmar = JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Logout", JOptionPane.YES_NO_OPTION);
+    
+    if (confirmar == JOptionPane.YES_OPTION) {
+        SessaoUsuario.limpar(); // Limpa o usuário logado
+        this.dispose(); // Fecha a janela atual
+
+        // Retorna para a tela de login
+        TelaLogin login = new TelaLogin();
+        login.setVisible(true);
+    }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     
      public static void main(String args[]) {
         Usuario usuarioLogado = new Usuario(); // ou receba de outro lugar, como da tela de login
@@ -528,15 +544,12 @@ tela.setVisible(true);
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -549,9 +562,9 @@ tela.setVisible(true);
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblBoasVindas;
     private javax.swing.JLabel lblDataHora;
+    private javax.swing.JLabel lblTotalConvenio;
     private javax.swing.JLabel lblTotalEspecialidades;
     private javax.swing.JLabel lblTotalFuncionarios;
-    private javax.swing.JLabel lblTotalMedicos;
     private javax.swing.JLabel lblTotalUsuarios;
     private javax.swing.JMenu menuEspecialidade;
     private javax.swing.JMenu menuFuncionario;

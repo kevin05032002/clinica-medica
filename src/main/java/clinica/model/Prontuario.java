@@ -11,6 +11,7 @@ public class Prontuario {
     private String diagnostico;
     private String conduta;
     private Timestamp dataRegistro;
+private String nomePaciente;
 
     public Prontuario() {}
 
@@ -50,4 +51,13 @@ public class Prontuario {
 
     public Timestamp getDataRegistro() { return dataRegistro; }
     public void setDataRegistro(Timestamp dataRegistro) { this.dataRegistro = dataRegistro; }
+
+    public String getNomePaciente() {
+    return nomePaciente;
 }
+
+public void setNomePaciente(String nomePaciente) {
+    this.nomePaciente = nomePaciente;
+}
+}
+

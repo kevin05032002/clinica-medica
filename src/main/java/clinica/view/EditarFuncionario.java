@@ -89,7 +89,7 @@ public class EditarFuncionario extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         NomeCompleto.setText("Nome Completo");
 
@@ -119,8 +119,7 @@ public class EditarFuncionario extends javax.swing.JFrame {
 
         Pis.setText("Numero do PIS");
 
-        btnCancelar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 254));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,8 +127,7 @@ public class EditarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        btnSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setBackground(new java.awt.Color(255, 255, 254));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +135,7 @@ public class EditarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(java.awt.SystemColor.textHighlight);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

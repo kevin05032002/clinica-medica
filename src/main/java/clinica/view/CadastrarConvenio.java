@@ -53,7 +53,7 @@ public class CadastrarConvenio extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setText(" Nome da Empresa");
 
@@ -61,8 +61,7 @@ public class CadastrarConvenio extends javax.swing.JFrame {
 
         jLabel3.setText("Telefone");
 
-        btnSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setBackground(new java.awt.Color(255, 255, 254));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,8 +69,7 @@ public class CadastrarConvenio extends javax.swing.JFrame {
             }
         });
 
-        btnLimpar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 254));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,8 +77,7 @@ public class CadastrarConvenio extends javax.swing.JFrame {
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 254));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +85,7 @@ public class CadastrarConvenio extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(java.awt.SystemColor.textHighlight);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

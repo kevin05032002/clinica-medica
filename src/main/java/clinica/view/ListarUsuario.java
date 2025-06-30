@@ -101,12 +101,11 @@ public class ListarUsuario extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setText("Usuario");
 
-        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 254));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,8 +113,7 @@ public class ListarUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnListarTodos.setBackground(new java.awt.Color(0, 0, 0));
-        btnListarTodos.setForeground(new java.awt.Color(255, 255, 255));
+        btnListarTodos.setBackground(new java.awt.Color(255, 255, 254));
         btnListarTodos.setText("Listar Todos");
         btnListarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,8 +121,7 @@ public class ListarUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnExcluir.setBackground(new java.awt.Color(0, 0, 0));
-        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btnExcluir.setBackground(new java.awt.Color(255, 255, 254));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,8 +129,7 @@ public class ListarUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnSair.setBackground(new java.awt.Color(0, 0, 0));
-        btnSair.setForeground(new java.awt.Color(255, 255, 255));
+        btnSair.setBackground(new java.awt.Color(255, 255, 254));
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,8 +137,7 @@ public class ListarUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnEditar.setBackground(new java.awt.Color(0, 0, 0));
-        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditar.setBackground(new java.awt.Color(255, 255, 254));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +145,7 @@ public class ListarUsuario extends javax.swing.JFrame {
             }
         });
 
-        tableUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+        tableUsuarios.setBackground(java.awt.SystemColor.textHighlight);
         tableUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         tableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

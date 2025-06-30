@@ -52,10 +52,9 @@ public class ListarEspecialidade extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 254));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,8 +62,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnLimpar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 254));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,8 +72,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
 
         jLabel1.setText("Especialidade");
 
-        btnListarTodos.setBackground(new java.awt.Color(0, 0, 0));
-        btnListarTodos.setForeground(new java.awt.Color(255, 255, 255));
+        btnListarTodos.setBackground(new java.awt.Color(255, 255, 254));
         btnListarTodos.setText("Listar Todas");
         btnListarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,8 +80,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnExcluir.setBackground(new java.awt.Color(0, 0, 0));
-        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btnExcluir.setBackground(new java.awt.Color(255, 255, 254));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +88,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnSair.setBackground(new java.awt.Color(0, 0, 0));
-        btnSair.setForeground(new java.awt.Color(255, 255, 255));
+        btnSair.setBackground(new java.awt.Color(255, 255, 254));
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +96,7 @@ public class ListarEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        tabelaEspecialidades.setBackground(new java.awt.Color(0, 0, 0));
+        tabelaEspecialidades.setBackground(java.awt.SystemColor.textHighlight);
         tabelaEspecialidades.setForeground(new java.awt.Color(255, 255, 255));
         tabelaEspecialidades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

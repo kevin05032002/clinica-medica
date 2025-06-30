@@ -100,4 +100,65 @@ public class ProntuarioDAO {
         }
         return lista;
     }
+    public List<Prontuario> buscarPorMedicoId(int medicoId) throws SQLException {
+    List<Prontuario> lista = new ArrayList<>();
+    String sql = "SELECT p.* FROM prontuarios p " +
+                 "JOIN consultas c ON p.consulta_id = c.id " +
+                 "WHERE c.medico_id = ?";
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = con.prepareStatement(sql)) {
+         
+        stmt.setInt(1, medicoId);
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Prontuario prontuario = new Prontuario();
+                prontuario.setId(rs.getInt("id"));
+                prontuario.setConsultaId(rs.getInt("consulta_id"));
+                prontuario.setQueixaPrincipal(rs.getString("queixa_principal"));
+                prontuario.setHistoricoDoenca(rs.getString("historico_doenca"));
+                prontuario.setExameFisico(rs.getString("exame_fisico"));
+                prontuario.setDiagnostico(rs.getString("diagnostico"));
+                prontuario.setConduta(rs.getString("conduta"));
+                prontuario.setDataRegistro(rs.getTimestamp("data_registro"));
+                lista.add(prontuario);
+            }
+        }
+    }
+    return lista;
 }
+  public List<Prontuario> buscarPorNomePaciente(String nomePaciente) throws SQLException {
+    List<Prontuario> lista = new ArrayList<>();
+
+    String sql = "SELECT p.*, pa.nome_completo AS nome_paciente " +
+                 "FROM prontuarios p " +
+                 "JOIN consultas c ON p.consulta_id = c.id " +
+                 "JOIN pacientes pa ON c.paciente_id = pa.id " +
+                 "WHERE pa.nome_completo LIKE ?";
+
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement stmt = con.prepareStatement(sql)) {
+
+        stmt.setString(1, "%" + nomePaciente + "%");
+
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Prontuario prontuario = new Prontuario();
+                prontuario.setId(rs.getInt("id"));
+                prontuario.setConsultaId(rs.getInt("consulta_id"));
+                prontuario.setQueixaPrincipal(rs.getString("queixa_principal"));
+                prontuario.setHistoricoDoenca(rs.getString("historico_doenca"));
+                prontuario.setExameFisico(rs.getString("exame_fisico"));
+                prontuario.setDiagnostico(rs.getString("diagnostico"));
+                prontuario.setConduta(rs.getString("conduta"));
+                prontuario.setDataRegistro(rs.getTimestamp("data_registro"));
+
+                prontuario.setNomePaciente(rs.getString("nome_paciente")); // novo campo
+
+                lista.add(prontuario);
+            }
+        }
+    }
+        return lista;
+  }
+}
+

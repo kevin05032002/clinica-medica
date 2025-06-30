@@ -23,6 +23,20 @@ public class ConvenioDAO {
             throw new RuntimeException("Erro ao inserir convênio: " + ex.getMessage(), ex);
         }
     }
+    public int contarConvenio() {
+    int total = 0;
+    String sql = "SELECT COUNT(*) FROM convenios";  // Exemplo com filtro de ativo
+    try (Connection con = ConexaoUtil.obterConexao();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+        if (rs.next()) {
+            total = rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return total;
+    }
 
     public void atualizar(Convenio convenio) {
         String sql = "UPDATE convenios SET nome_empresa = ?, cnpj = ?, telefone = ? WHERE id = ?";

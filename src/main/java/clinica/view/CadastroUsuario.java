@@ -121,7 +121,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
         cbPermissao = new javax.swing.JComboBox<>();
         txtLogin = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtFuncionario = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -135,9 +134,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(java.awt.SystemColor.textHighlight);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -152,33 +151,27 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         lblLogin.setText("Usuario");
 
-        btnSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setBackground(new java.awt.Color(255, 255, 254));
         btnSalvar.setText("Salvar");
 
         jLabel3.setText("Senha");
 
         jLabel4.setText("Funçao");
 
+        cbPermissao.setBackground(new java.awt.Color(255, 255, 254));
         cbPermissao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "MEDICO", "ATENDENTE" }));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setText("Cadastro de Usuário");
 
         jLabel5.setText("Funcionario");
 
-        btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 254));
         btnBuscar.setText("Buscar");
 
-        btnLimpar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 254));
         btnLimpar.setText("Limpar");
 
         jLabel6.setText("Comfirmar Senha");
 
-        btnCancelar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 254));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +205,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbPermissao, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,9 +218,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(60, 60, 60)
+                .addGap(101, 101, 101)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,7 +280,6 @@ dispose();        // TODO add your handling code here:
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbPermissao;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

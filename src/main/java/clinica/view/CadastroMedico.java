@@ -89,7 +89,7 @@ for (Especialidade esp : listaEspecialidades) {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setText("Nome");
 
@@ -109,8 +109,7 @@ for (Especialidade esp : listaEspecialidades) {
             }
         });
 
-        btnSalvar.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setBackground(new java.awt.Color(255, 255, 254));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,8 +117,7 @@ for (Especialidade esp : listaEspecialidades) {
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 254));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +125,7 @@ for (Especialidade esp : listaEspecialidades) {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(java.awt.SystemColor.textHighlight);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -140,8 +138,7 @@ for (Especialidade esp : listaEspecialidades) {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        btnLimpar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setBackground(new java.awt.Color(255, 255, 254));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
